@@ -17,8 +17,8 @@ public Plugin myinfo =
     name = "Ultimate horde",
     description = "This plugin will make spawn the ultimate horde !!!",
     author = "ravageur",
-    version = "1.0",
-    url = "NONE"
+    version = "1.01",
+    url = "https://github.com/ravageur/L4D2-Plugin-Horde-Infinite"
 };
 
 /**
@@ -38,10 +38,6 @@ public void OnPluginStart()
     BypassRequirementCheat("director_relax_min_interval", "1");
     BypassRequirementCheat("director_relax_max_interval", "2");
     BypassRequirementCheat("director_relax_max_flow_travel", "1");
-
-    BypassRequirementCheat("director_tank_min_interval", "119");
-    BypassRequirementCheat("director_tank_max_interval", "121");
-
     BypassRequirementCheat("z_common_limit", "200");
 }
 
@@ -60,7 +56,7 @@ void RegisterEvents()
 void RegisterCvars()
 {
     uh_delayBetweenHorde = CreateConVar("uh_delayBetweenHorde", "60", "Default delay before to call the next horde. (If value below 1 then it's a horde infinite).", ADMFLAG_ROOT);
-    uh_resetConvars = CreateConVar("uh_resetConvars", "1", "By default it's set to true. This convar is used to reset by default all the convars modified by this plugin.", ADMFLAG_ROOT);
+    uh_resetConvars = CreateConVar("uh_resetConvars", "1", "This convar is used to reset by default all the convars modified by this plugin.", ADMFLAG_ROOT);
 }
 
 void RegisterCommands()
@@ -166,7 +162,6 @@ void ResetConvarsBase()
         BypassRequirementCheat("director_relax_max_interval", "45");
         BypassRequirementCheat("director_relax_max_flow_travel", "3000");
         BypassRequirementCheat("z_common_limit", "30");
-        
     }
 }
 
